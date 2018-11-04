@@ -1,0 +1,106 @@
+Variablen in Reihenfolge?
+==> Ja, siehe Adresse, aber von unten nach oben. Unten zuerst und oben als letztes.
+==> little endian??
+
+Lücken?
+==> Ja es gibt lücken Bsp. zwischen int und short int  (Dezimal) 140728598054682 --- 140728598054684)
+
+Speicher insgesamt
+==> Von 0x7ffdee18c71c bis 0x7ffdee18c6c0
+==> (Dezimal) 140728598054684 bis 140728598054592
+==> 96byte +4 weil anfang Adresse....
+
+
+----------------------------------------------------------------------------------------------------
+
+
+
+make aufgabe1
+gcc -g -fno-stack-protector -W -Wall -std=c11 -pedantic    aufgabe1.c   -o aufgabe1
+
+
+ ./aufgabe1
+
+
+ 0x7ffdee18c71c ||  4 ||                    int || a || 12
+ 0x7ffdee18c71a ||  2 ||              short int || b || 13
+ 0x7ffdee18c710 ||  8 ||               long int || c || 14
+ 0x7ffdee18c708 ||  8 ||          long long int || d || 15
+ 0x7ffdee18c704 ||  4 ||           unsigned int || e || 4294967295
+ 0x7ffdee18c702 ||  2 ||     unsigned short int || f || 65535
+ 0x7ffdee18c6fc ||  4 ||                  float || g || 3.14
+ 0x7ffdee18c6f0 ||  8 ||                 double || h || 3.15
+ 0x7ffdee18c6e0 || 16 ||            long double || i || 3.16
+ 0x7ffdee18c6df ||  1 ||                   char || j || a
+ 0x7ffdee18c6de ||  1 ||            signed char || k || -1
+ 0x7ffdee18c6dd ||  1 ||          unsigned char || l || 255
+ 0x7ffdee18c6d0 ||  8 ||      unsigned long int || m || 65535
+ 0x7ffdee18c6c8 ||  8 || unsigned long long int || n || 65535
+ 0x7ffdee18c6c0 ||  8 ||                  char* || s || Hallo
+ 
+
+Aktuell benutztes Datenmodell:
+LP64
+
+
+
+./aufgabe1 | sort
+
+
+
+ 
+ 0x7ffdd5797a10 ||  8 ||                  char* || s || Hallo
+ 0x7ffdd5797a18 ||  8 || unsigned long long int || n || 65535
+ 0x7ffdd5797a20 ||  8 ||      unsigned long int || m || 65535
+ 0x7ffdd5797a2d ||  1 ||          unsigned char || l || 255
+ 0x7ffdd5797a2e ||  1 ||            signed char || k || -1
+ 0x7ffdd5797a2f ||  1 ||                   char || j || a
+ 0x7ffdd5797a30 || 16 ||            long double || i || 3.16
+ 0x7ffdd5797a40 ||  8 ||                 double || h || 3.15
+ 0x7ffdd5797a4c ||  4 ||                  float || g || 3.14
+ 0x7ffdd5797a52 ||  2 ||     unsigned short int || f || 65535
+ 0x7ffdd5797a54 ||  4 ||           unsigned int || e || 4294967295
+ 0x7ffdd5797a58 ||  8 ||          long long int || d || 15
+ 0x7ffdd5797a60 ||  8 ||               long int || c || 14
+ 0x7ffdd5797a6a ||  2 ||              short int || b || 13
+ 0x7ffdd5797a6c ||  4 ||                    int || a || 12
+Aktuell benutztes Datenmodell:
+LP64
+
+
+
+./aufgabe1 | sort -r
+LP64
+Aktuell benutztes Datenmodell:
+ 0x7ffebaaef84c ||  4 ||                    int || a || 12
+ 0x7ffebaaef84a ||  2 ||              short int || b || 13
+ 0x7ffebaaef840 ||  8 ||               long int || c || 14
+ 0x7ffebaaef838 ||  8 ||          long long int || d || 15
+ 0x7ffebaaef834 ||  4 ||           unsigned int || e || 4294967295
+ 0x7ffebaaef832 ||  2 ||     unsigned short int || f || 65535
+ 0x7ffebaaef82c ||  4 ||                  float || g || 3.14
+ 0x7ffebaaef820 ||  8 ||                 double || h || 3.15
+ 0x7ffebaaef810 || 16 ||            long double || i || 3.16
+ 0x7ffebaaef80f ||  1 ||                   char || j || a
+ 0x7ffebaaef80e ||  1 ||            signed char || k || -1
+ 0x7ffebaaef80d ||  1 ||          unsigned char || l || 255
+ 0x7ffebaaef800 ||  8 ||      unsigned long int || m || 65535
+ 0x7ffebaaef7f8 ||  8 || unsigned long long int || n || 65535
+ 0x7ffebaaef7f0 ||  8 ||                  char* || s || Hallo
+ 
+ 
+ 
+make CC=g++ STD=c++11 clean aufgabe1
+rm -f aufgabe1 aufgabe1.o
+g++ -W -Wall -std=c++11 -pedantic    aufgabe1.c   -o aufgabe1
+student@bwlp-in-prtec:~/z-drive/04_Sysprog/Sysprog_uebung/Aufgabe1$ 
+ 
+
+cppcheck --enable=all --std=c11 aufgabe1.c
+Checking aufgabe1.c...
+(information) Cppcheck cannot find all the include files (use --check-config for details)
+
+
+
+
+ 

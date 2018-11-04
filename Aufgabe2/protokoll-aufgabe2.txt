@@ -1,0 +1,33 @@
+Protokoll Aufgabe 2
+
+1. Verhält sich das C-Programm bei allen Eingaben wie das Java-Programm?
+    - Es gibt nur einen Unterschied bei der Durchführung vom Bubblesort.
+      Bei C:    "./bubblesort a"    -> a wird als 0 gesehen.
+      Bei Java: "java Bubblesort a" -> Error.
+
+2. Funktioniert die Fehlerbehandlung bei Speicherreservierung und Einlesen?
+    - Ja.
+
+3. Meldet valgrind Fehler?
+    - Nein.
+
+4. Meldet cppcheck Probleme?
+    - Nein.
+
+5.Lässt sich ihr Programm auch mit g++ ohne Fehlermeldungen und Warnungen übersetzen?
+    - Keine Fehler aber eine Warnung
+
+6. Was liefert die obige Befehlsfolge, wenn ihr Bubblesort richtig sortiert hat?
+    - siehe out.txt
+
+7. Wächst die Ausführungszeit tatsächlich quadratisch mit der Feldgroesse?
+    - Nein.
+
+8. Ist das Java-Programm oder das C-Programm schneller?
+    - Das C-Programm ist um einiges schneller.
+
+9. Ist das optimierte Programm erkennbar schneller?
+    - Nein.
+
+10. Was hat der Compiler an dem C-Programm optimiert?
+    - Dunno
