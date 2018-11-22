@@ -1,0 +1,28 @@
+Übungsaufgabe 3: C Stringsort
+
+Verhält sich das C-Programm bei allen Eingaben wie das Java-Programm?
+      - Ja.
+
+Meldet valgrind Fehler?
+      - Nein.
+
+Meldet cppcheck Probleme?
+      - Nein.
+
+Lässt sich Ihr Programm auch mit g++ ohne Fehlermeldungen und Warnungen übersetzen?
+      - Ja.
+
+Ist das speicher-optimierte Programm schneller als das nicht optimierte?
+      - Nein.
+
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe3$  time ./stringsort 20000 > /dev/null
+
+real    0m2,803s
+user    0m2,796s
+sys     0m0,005s
+
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe3$ time ./stringsort-optimiert 20000 > /dev/null
+
+real    0m2,939s
+user    0m2,934s
+sys     0m0,005s
