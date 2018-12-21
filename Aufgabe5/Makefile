@@ -1,4 +1,4 @@
-PACKAGES=bin lib
+PACKAGES=lib bin
 .PHONY: all clean
 all clean:
 	for p in $(PACKAGES); do \

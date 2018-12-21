@@ -1,9 +1,5 @@
-#
-# Makefile
-#
-# Autor: H.Drachenfels
-# Erstellt am: 25.7.2018
-#----------------------------------- Kommando-Variablen
+#Makefile
+#Kommando-Variablen
 CC = gcc
 CFLAGS = -W -Wall -std=c11 -pedantic -fPIC
 CPPFLAGS = -I.#sucht in dem aktuellen File

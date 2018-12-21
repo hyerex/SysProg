@@ -7,7 +7,8 @@
 CC = gcc
 CFLAGS = -W -Wall -std=c11 -pedantic -fpic
 CPPFLAGS = -I$(LIBPATH)
-LDFLAGS = -L$(LIBPATH)#komplettes Verzeichnis nach libBibliotheke durchsucht
+LDFLAGS = -L$(LIBPATH)
+#komplettes Verzeichnis nach libBibliotheke durchsucht
 RM = rm -f
 LIBNAME = aufgabe5#archiv name
 LIBPATH = ../lib/#bibliotheksarchiv
