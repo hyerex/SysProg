@@ -1,0 +1,2 @@
+fachnote.o: fachnote.c fachnote.h
+liste.o: liste.c liste.h fachnote.h

@@ -32,42 +32,10 @@ int main(int argc, char *argv[])
     }
 //---------------------------------------------------- Zahlen einlesen
     printf("Bitte %d ganze Zahlen eingeben: ", n);
-    /*
-    for (int i = 0; i < n; i++)
-    {
 
-        if (scanf("%d", &a[i]) != 1)
-        {
-            a[i] = rand();
-        }
-
-    }*/
     for (int i = 0; i < n; ++i) {
       int r = rand() % n;
       a[r] = r;
-    }
-    //--------------------------------------------------- Zahlen sortieren
-    for (int i = n; i > 1; i--)
-    {
-        // groessten Wert nach hinten schieben
-        for (int j = 0; j < i - 1; ++j)
-        {
-            if (a[j] > a[j + 1])
-            {
-                // Werte tauschen
-                int tmp = a[j + 1];
-                a[j + 1] = a[j];
-                a[j] = tmp;
-            }
-        }
-
-    }
-//---------------------------------------------------- Zahlen ausgeben
-    printf("Sortierte Zahlenfolge: ");
-    printf("%d\n", n);
-    for (int i = 0; i < n; ++i)
-    {
-        printf("%d\n", a[i]);
     }
 
     free(a);
