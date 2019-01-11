@@ -1,0 +1,129 @@
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ./filesize xxx *
+xxx: Datei oder Verzeichnis nicht gefunden
+Datei: copy.c Größe: 1740 Bytes
+Datei: count.c Größe: 704 Bytes
+Datei: filecopy Größe: 16856 Bytes
+Datei: filecopy.c Größe: 2867 Bytes
+Datei: filecopy.dSYM Größe: 4096 Bytes
+Datei: filesize Größe: 12320 Bytes
+Datei: filesize.c Größe: 838 Bytes
+Datei: filesize.dSYM Größe: 4096 Bytes
+Datei: Makefile Größe: 290 Bytes
+Datei: protokoll Größe: 1231 Bytes
+Datei: test1 Größe: 54 Bytes
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ls -l xxx *
+ls: Zugriff auf 'xxx' nicht möglich: Datei oder Verzeichnis nicht gefunden
+-rw-r--r-- 1 pfau pfau  1740 Jan 10 16:17 copy.c
+-rw-r--r-- 1 pfau pfau   704 Jan 10 13:42 count.c
+-rwxr-xr-x 1 pfau pfau 16856 Jan 11 11:38 filecopy
+-rw-r--r-- 1 pfau pfau  2867 Jan 11 11:30 filecopy.c
+-rwxr-xr-x 1 pfau pfau 12320 Jan 11 11:38 filesize
+-rw-r--r-- 1 pfau pfau   838 Jan 10 15:05 filesize.c
+-rw-r--r-- 1 pfau pfau   290 Jan 10 19:32 Makefile
+-rw-r--r-- 1 pfau pfau  1231 Jan 10 19:47 protokoll
+-rw-r--r-- 1 pfau pfau    54 Jan 10 19:15 test1
+
+filecopy.dSYM:
+insgesamt 4
+drwxr-xr-x 3 pfau pfau 4096 Jan 10 19:42 Contents
+
+filesize.dSYM:
+insgesamt 4
+drwxr-xr-x 3 pfau pfau 4096 Jan 10 19:42 Contents
+
+
+############################################################################
+############################################################################
+
+
+
+Kommt für die nicht existierende Datei xxx die gleiche Fehlermeldung?
+Ja
+In welcher Sprache erscheint die Systemmeldung?
+Deutsch
+
+
+###########################################################################
+###########################################################################
+
+
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ./filesize xxx *
+xxx: No such file or directory
+Datei: copy.c Größe: 1740 Bytes
+Datei: count.c Größe: 704 Bytes
+Datei: filecopy Größe: 16856 Bytes
+Datei: filecopy.c Größe: 2867 Bytes
+Datei: filecopy.dSYM Größe: 4096 Bytes
+Datei: filesize Größe: 12320 Bytes
+Datei: filesize.c Größe: 838 Bytes
+Datei: filesize.dSYM Größe: 4096 Bytes
+Datei: Makefile Größe: 290 Bytes
+Datei: protokoll Größe: 1231 Bytes
+Datei: test1 Größe: 54 Bytes
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ls -l xxx *
+ls: cannot access 'xxx': No such file or directory
+-rw-r--r-- 1 pfau pfau  1740 Jan 10 16:17 copy.c
+-rw-r--r-- 1 pfau pfau   704 Jan 10 13:42 count.c
+-rwxr-xr-x 1 pfau pfau 16856 Jan 11 11:38 filecopy
+-rw-r--r-- 1 pfau pfau  2867 Jan 11 11:30 filecopy.c
+-rwxr-xr-x 1 pfau pfau 12320 Jan 11 11:38 filesize
+-rw-r--r-- 1 pfau pfau   838 Jan 10 15:05 filesize.c
+-rw-r--r-- 1 pfau pfau   290 Jan 10 19:32 Makefile
+-rw-r--r-- 1 pfau pfau  1231 Jan 10 19:47 protokoll
+-rw-r--r-- 1 pfau pfau    54 Jan 10 19:15 test1
+
+filecopy.dSYM:
+total 4
+drwxr-xr-x 3 pfau pfau 4096 Jan 10 19:42 Contents
+
+filesize.dSYM:
+total 4
+drwxr-xr-x 3 pfau pfau 4096 Jan 10 19:42 Contents
+
+
+#########################################################################
+#########################################################################
+
+In welcher Sprache erscheinen jetzt die Fehlermeldungen von filesize und ls?
+Englisch
+
+#########################################################################
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ./filecopy filecopy.c filecopy-kopie.c
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ diff filecopy.c filecopy-kopie.c
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ 
+
+#########################################################################
+
+Wie verhält sich filecopy,
+wenn die Quelldatei nicht existiert?
+
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ./filecopy quelle test2
+Quelle quelle kann nicht geoeffnet werden (errno 2: Datei oder Verzeichnis nicht gefunden)
+
+
+wenn Sie kein Leserecht auf der Quelldatei haben?
+
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ chmod -r test1 
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ./filecopy test1 test2
+Quelle test1 kann nicht geoeffnet werden (errno 13: Keine Berechtigung)
+
+
+wenn die Zieldatei bereits existiert?
+
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ./filecopy test1 test2
+Ziel test2 kann nicht erzeugt werden (errno 17: Die Datei existiert bereits)
+
+
+wenn Sie kein Schreibrecht im Zielverzeichnis haben?
+
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ cd ..
+pfau@Lugso-M-Deb:~/Dokumente$ chmod -w aufgabe6/
+pfau@Lugso-M-Deb:~/Dokumente$ cd aufgabe6/
+pfau@Lugso-M-Deb:~/Dokumente/aufgabe6$ ./filecopy test1 test5
+Ziel test5 kann nicht erzeugt werden (errno 13: Keine Berechtigung)
+
+
+
+
+
+

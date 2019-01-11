@@ -1,2 +1,0 @@
-notenspiegel.o: notenspiegel.c ../lib/fachnote.h ../lib/liste.h \
- ../lib/fachnote.h

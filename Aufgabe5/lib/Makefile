@@ -1,4 +1,4 @@
-#Makefile
+#Makefile-lib
 #Kommando-Variablen
 CC = gcc
 CFLAGS = -W -Wall -std=c11 -pedantic -fPIC
@@ -10,8 +10,8 @@ AR = ar rs#ar: archiviere  r: fügt die inhalte in Archiv  s: fügt einen Index 
 
 #--------------------------------------- Hilfsvariablen
 OBJECTS = fachnote.o liste.o
-SOURCES = $(OBJECTS:.o=.c)#c-Dateien
-HEADERS = $(OBJECTS:.o=.h)#h-dateien
+SOURCES = $(OBJECTS:.o=.c)
+HEADERS = $(OBJECTS:.o=.h)
 
 #----------------------------------------- Musterregeln
 %.o: %.c

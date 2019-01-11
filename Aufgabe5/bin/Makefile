@@ -1,8 +1,8 @@
 #
-# Makefile
+# Makefile-bin
 #
-# Autor: H.Drachenfels
-# Erstellt am: 25.7.2018
+# Autor: Andreas Ly
+# Erstellt am: 18.12.2018
 #----------------------------------- Kommando-Variablen
 CC = gcc
 CFLAGS = -W -Wall -std=c11 -pedantic -fpic
@@ -10,8 +10,8 @@ CPPFLAGS = -I$(LIBPATH)
 LDFLAGS = -L$(LIBPATH)
 #komplettes Verzeichnis nach libBibliotheke durchsucht
 RM = rm -f
-LIBNAME = aufgabe5#archiv name
-LIBPATH = ../lib/#bibliotheksarchiv
+LIBNAME = aufgabe5
+LIBPATH = ../lib/
 
 #--------------------------------------- Hilfsvariablen
 TARGET = notenspiegel
@@ -23,7 +23,7 @@ HEADERS = $(LIBPATH)fachnote.h $(LIBPATH)liste.h
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
 
 #---------------------------------------- Standardziele
-.PHONY: all clean#PsydoBefehle
+.PHONY: all clean
 
 all: $(TARGET)
 

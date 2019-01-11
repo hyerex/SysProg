@@ -1,0 +1,47 @@
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe6$ ./filesize xxx *
+xxx: No such file or directory
+Datei: copy Groesse: 11384 Bytes
+Datei: copy.c Groesse: 1714 Bytes
+Datei: copy-kopie.c Groesse: 1714 Bytes
+Datei: count.c Groesse: 703 Bytes
+Datei: filecopy Groesse: 16488 Bytes
+Datei: filecopy.c Groesse: 2307 Bytes
+Datei: filesize Groesse: 12000 Bytes
+Datei: filesize.c Groesse: 935 Bytes
+Datei: Makefile Groesse: 247 Bytes
+Datei: protokoll.txt Groesse: 0 Bytes
+-------------------------------------------------------------------------------
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe6$ ls -l xxx *
+ls: cannot access 'xxx': No such file or directory
+-rwxrwxr-x 1 blank blank 11384 Jan 10 17:49 copy
+-rw-rw-r-- 1 blank blank  1714 Jan 10 13:47 copy.c
+-rw-r--r-- 1 blank blank  1714 Jan 11 12:17 copy-kopie.c
+-rw-rw-r-- 1 blank blank   703 Jan 10 13:47 count.c
+-rwxrwxr-x 1 blank blank 16488 Jan 11 12:17 filecopy
+-rw-rw-r-- 1 blank blank  2307 Jan 11 12:17 filecopy.c
+-rwxrwxr-x 1 blank blank 12000 Jan 10 15:07 filesize
+-rw-rw-r-- 1 blank blank   935 Jan 10 15:25 filesize.c
+-rw-rw-r-- 1 blank blank   247 Jan 10 15:06 Makefile
+-rw-rw-r-- 1 blank blank     0 Jan 11 13:24 protokoll.txt
+--------------------------------------------------------------------------------
+Kommt für die nicht existierende Datei xxx die gleiche Fehlermeldung?
+Ja
+In welcher Sprache erscheint die Systemmeldung?
+Englisch
+--------------------------------------------------------------------------------
+Wie verhält sich filecopy wenn die Quelle nicht existiert?
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe6$ ./filecopy quielle test2
+Quelle quielle kann nicht geoeffnet werden (errno 2: No such file or directory)
+--------------------------------------------------------------------------------
+Was passiert, wenn sie keine Leserechte auf der Quelldatei haben?
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe6$ chmod -r protokoll-aufgabe6.txt
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe6$ ./filecopy protokoll-aufgabe6.txt test2
+Quelle protokoll-aufgabe6.txt kann nicht geoeffnet werden (errno 13: Permission denied)
+--------------------------------------------------------------------------------
+Was passiert, wenn die Zieldatei bereits existiert?
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe6$ ./filecopy protokoll-aufgabe6.txt test2
+Ziel test2 kann nicht erzeugt werden (errno 17: File exists)
+--------------------------------------------------------------------------------
+Was passiert, wenn Sie kein Schreibrecht auf das Zielverzeichnis haben?
+blank@Magickarp:~/Documents/SystemProgrammierung/Aufgabe6$ ./filecopy test2 test1
+Ziel test1 kann nicht erzeugt werden (errno 13: Permission denied)
